@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팩토리얼 계산기</title>
+</head>
+<body>
+    <h1>팩토리얼 계산기</h1>
+    <p>숫자를 입력하면 팩토리얼 값이 출력됩니다.</p>
+    <button onclick="calculateFactorial()">팩토리얼 계산</button>
+    <p id="factorialResult"></p>
+
+    <script>
+        function factorial(n) {
+            if (n === 0 || n === 1) return 1;
+            return n * factorial(n - 1);
+        }
+        function calculateFactorial() {
+            let num = prompt("숫자를 입력하시랑께");
+            if (!num || isNaN(num) || num < 0) {
+                alert("올바른 숫자를 입력해야혀요.");
+                return;
+            }
+            let result = factorial(Number(num));
+            document.getElementById("factorialResult").textContent = `${num}! = ${result}`;
+        }
+    </script>
+</body>
+</html>

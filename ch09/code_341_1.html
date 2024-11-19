@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16번, 센티미터 변환 프로그램</title>
+</head>
+<body>
+    <h1>센티미터 변환하기</h1>
+    <p>센티미터(cm) 입력하면 피트(feet)와 인치(inch)로 변환됨다.</p>
+    <button onclick="convertCm()">변환하기</button>
+    <p id="conversionResult"></p>
+
+    <script>
+        function convertCm() {
+            let cm = prompt("센티미터를 입력하세요:");
+            if (!cm || isNaN(cm) || cm <= 0) {
+                alert("올바른 값을 입력해주세요.");
+                return;
+            }
+            let inch = cm / 2.54;
+            let feet = Math.floor(inch / 12);
+            inch = inch % 12;
+            document.getElementById("conversionResult").textContent = 
+                `${cm}cm는 ${feet}피트 ${inch.toFixed(2)}인치입니다.`;
+        }
+    </script>
+</body>
+</html>

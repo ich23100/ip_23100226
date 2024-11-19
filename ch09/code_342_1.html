@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19번, 띠 출력</title>
+</head>
+<body>
+    <h1>띠 알아보기!</h1>
+    <p>태어난 연도를 입력하시랑께</p>
+    <button onclick="calculateZodiac()">연도 입력하기</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateZodiac() {
+            const animals = ["원숭이", "닭", "개", "돼지", "쥐", "소", "호랑이", "토끼", "용", "뱀", "말", "양"];
+            let year = prompt("태어난 연도를 입력하세요. 예) 2004");
+            if (!year || isNaN(year)) {
+                alert("네글자 지대로 입력해야혀요");
+                return;
+            }
+            let zodiac = animals[year % 12];
+            document.getElementById("result").textContent = `당신의 띠는 '${zodiac}' 입니다.`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17번, 원기둥 부피 계산 프로그램</title>
+</head>
+<body>
+    <h1>원기둥 부피 계산하기</h1>
+    <p>반지름과 높이를 입력하면 원기둥의 부피를 계산</p>
+    <button onclick="calculateCylinderVolume()">부피 계산</button>
+    <p id="cylinderVolumeResult"></p>
+
+    <script>
+        function calculateCylinderVolume() {
+            let radius = prompt("반지름을 입력하세요 (단위: cm):");
+            let height = prompt("높이를 입력하세요 (단위: cm):");
+            if (!radius || isNaN(radius) || radius <= 0 || !height || isNaN(height) || height <= 0) {
+                alert("올바른 값을 입력해주세요.");
+                return;
+            }
+            let volume = Math.PI * Math.pow(radius, 2) * height;
+            document.getEementById("cylinderVolumeResult").textContent = 
+                `반지름 ${radius}cm와 높이 ${height}cm인 원기둥의 부피는 ${volume.toFixed(2)}cm³입니다.`;
+        }
+    </script>
+</body>
+</html>

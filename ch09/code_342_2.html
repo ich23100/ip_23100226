@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20번, 별 패턴</title>
+</head>
+<body>
+    <pre id="output"></pre>
+    <script>
+        let rows = 8;
+        let result = "";
+        for (let i = 1; i <= rows; i++) {
+            let stars = "";
+            for (let j = 1; j <= i; j++) {
+                stars += "*";
+            }
+            result += stars + "\n";
+        }
+        document.getElementById("output").textContent = result;
+    </script>
+</body>
+</html>
